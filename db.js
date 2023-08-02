@@ -1,25 +1,8 @@
 import * as sqlite from 'sqlite'; // * to import module that is not pure es6
 import sqlite3 from 'sqlite3';
-import express from 'express';
 
-const app = express();
-// should be in index.js const PORT = process.env.PORT || 3008;
 
-//get all greetings
 
-app.get('/api/greetings', async (req, res) => {
-    const greetings = await getGreetings();
-    console.log(greetings);
-    res.json( {
-        greetings
-    })
-});
-
-//create route to add greeting
-
-app.listen(PORT, () => `started on port ${PORT}`)
-
-console.log('start');
 
 
 const db =  await sqlite.open({
@@ -72,15 +55,7 @@ export async function updateGreeting(language, greeting, id) {
     const sql = `update greetings set language =?, greeting =? where id =?`;
     await db.run(sql, [language, greeting, id]);
 }
-const result1 = await getGreetings();
-console.log(result1);
 
-console.log('-------------------------------');
-
-//await addGreeting('Sepedi', 'Thobela');
-console.log('-------------------------------');
-const result2 = await getGreetings();
-console.log(result2);
 
 
 
