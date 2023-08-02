@@ -3,7 +3,7 @@ import sqlite3 from 'sqlite3';
 import express from 'express';
 
 const app = express();
-const PORT = process.env.PORT || 3008;
+const PORT = process.env.PORT || 3009;
 
 //get all greetings
 
