@@ -3,7 +3,7 @@ import sqlite3 from 'sqlite3';
 import express from 'express';
 
 const app = express();
-const PORT = process.env.PORT || 3009;
+// should be in index.js const PORT = process.env.PORT || 3008;
 
 //get all greetings
 
